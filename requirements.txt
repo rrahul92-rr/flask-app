@@ -1,6 +1,7 @@
 flask
 pandas
-json
+json5==0.9.5
+jsonschema==3.2.0
 pickle
 numpy
 sklearn
