@@ -4,7 +4,7 @@ import json
 import pickle
 import numpy as np
 
-app1 = Flask(__name__)
+app = Flask(__name__)
 
 ## Load modeliing artefacts
 filename = 'final_rf_model.pkl'
@@ -28,7 +28,7 @@ def categorical_encoding(encoder, input_df):
     return X
 
 ## Routing requests to /api
-@app1.route("/api", methods=['POST'])
+@app.route("/api", methods=['POST'])
 def return_pred_proba():
     # Get user inputs as json
     input_json = request.get_json(force = True)
@@ -43,4 +43,4 @@ def return_pred_proba():
     
 
 if __name__ == '__main__':
-    app1.run(port =5000, debug = True)
+    app.run(port = 5000, debug = True)
